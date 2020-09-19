@@ -1,0 +1,38 @@
+<br>
+<div id="f">
+  <form [formGroup]="form" (ngSubmit)="register()">
+    <div class="form-group">
+      <h3>Signup</h3>
+      <label for="exampleInputEmail1">User Name</label>
+      <input type="text" class="form-control" formControlName="name" >
+      <span *ngIf="form.controls.name.touched && !form.controls.name.valid" >Username is required</span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" formControlName="email" >
+      <span *ngIf="form.controls.email.touched && !form.controls.email.valid" >Email is required</span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password" >
+      <span *ngIf="form.controls.password.touched && !form.controls.password.valid" >Password is required</span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Mobile No.</label>
+      <input type="number" class="form-control" formControlName="number" >
+      <span *ngIf="form.controls.number.touched && !form.controls.number.valid" >Mobile No. is required</span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">City</label>
+      <input type="text" class="form-control" formControlName="city" >
+      <span *ngIf="form.controls.city.touched && !form.controls.city.valid" >City is required</span>
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Register</button>&nbsp;&nbsp;
+    <button type="reset" class="btn btn-danger">Reset</button>
+     <br><br>
+    <p>If You are a member?
+      <a [routerLink]="['/login']">Login</a>
+  </p>
+  </form>
+</div>
+
